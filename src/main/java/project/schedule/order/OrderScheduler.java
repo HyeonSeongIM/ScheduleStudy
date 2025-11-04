@@ -12,7 +12,7 @@ public class OrderScheduler {
 
     private final OrderRepository orderRepository;
 
-    @Scheduled(fixedDelay = 1000)
+    @Scheduled(initialDelay = 10000, fixedDelay = 1000)
     public void processPendingOrders() {
         System.out.println("Processing pending orders...");
         List<Order> orders = orderRepository.findByStatus("PENDING");
